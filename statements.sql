@@ -1,5 +1,5 @@
-create database JongerenKansrijker;
-USE JongerenKansrijker;
+create database JongerenKansrijker2;
+USE JongerenKansrijker2;
 
 create table Jongere(
 jongerecode int NOT NULL AUTO_INCREMENT,
@@ -8,6 +8,13 @@ tussenvoegsel varchar(7) NOT NULL,
 achternaam varchar(25) NOT NULL,
 inschrijfdatum date NOT NULL,
 PRIMARY KEY (jongerecode)
+);
+
+create table medewerker(
+medewerkercode int NOT NULL AUTO_INCREMENT,
+username varchar(255) NOT NULL UNIQUE,
+password varchar(255) NOT NULL,
+PRIMARY KEY (medewerkercode)
 );
 
 create table Activiteit(
@@ -19,7 +26,7 @@ PRIMARY KEY (activiteitscode)
 create table Instituut(
 instituutscode int NOT NULL AUTO_INCREMENT,
 instituut varchar(40) NOT NULL,
-telefooninstituut varchar(11) NOT NULL,
+telefooninstituut varchar(255) NOT NULL,
 PRIMARY KEY (instituutscode)
 );
 
